@@ -1,5 +1,5 @@
-# plots.py
 import matplotlib.pyplot as plt
+import ipywidgets as widgets
 
 def plot_spy_moving_averages(data):
     plt.figure(figsize=(10, 6))
@@ -56,7 +56,7 @@ def plot_spy_percent_low_to_previous_close(data):
     plt.show()
 
 def fg_plot_all(data):
-tab1 = widgets.Output()
+    tab1 = widgets.Output()
     tab2 = widgets.Output()
     tab3 = widgets.Output()
     tab4 = widgets.Output()
