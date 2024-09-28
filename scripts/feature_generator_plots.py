@@ -56,8 +56,28 @@ def plot_spy_percent_low_to_previous_close(data):
     plt.show()
 
 def fg_plot_all(data):
-    plot_spy_moving_averages(data)
-    plot_spy_oscillators_and_volume_z_scores(data)
-    plot_spy_percent_close_change(data)
-    plot_spy_percent_high_to_previous_close(data)
-    plot_spy_percent_low_to_previous_close(data)
+tab1 = widgets.Output()
+    tab2 = widgets.Output()
+    tab3 = widgets.Output()
+    tab4 = widgets.Output()
+    tab5 = widgets.Output()
+
+    with tab1:
+        plot_spy_moving_averages(data)
+    with tab2:
+        plot_spy_oscillators_and_volume_z_scores(data)
+    with tab3:
+        plot_spy_percent_close_change(data)
+    with tab4:
+        plot_spy_percent_high_to_previous_close(data)
+    with tab5:
+        plot_spy_percent_low_to_previous_close(data)
+
+    tab = widgets.Tab(children=[tab1, tab2, tab3, tab4, tab5])
+    tab.set_title(0, 'Moving Averages')
+    tab.set_title(1, 'Oscillators & Z-Scores')
+    tab.set_title(2, 'Percent Close Change')
+    tab.set_title(3, 'Percent High Change')
+    tab.set_title(4, 'Percent Low Change')
+
+    display(tab)
