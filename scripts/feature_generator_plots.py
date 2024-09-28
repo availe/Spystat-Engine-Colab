@@ -1,4 +1,3 @@
-# plots.py
 import matplotlib.pyplot as plt
 
 def plot_spy_moving_averages(data):
