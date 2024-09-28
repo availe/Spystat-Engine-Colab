@@ -55,7 +55,7 @@ def plot_spy_percent_low_to_previous_close(data):
     plt.grid(True)
     plt.show()
 
-def feature_generator_plot_all(data):
+def fg_plot_all(data):
     plot_spy_moving_averages(data)
     plot_spy_oscillators_and_volume_z_scores(data)
     plot_spy_percent_close_change(data)
